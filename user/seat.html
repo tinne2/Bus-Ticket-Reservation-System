@@ -1,0 +1,902 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Ticket Reservation</title>
+<link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" title="default" />
+<link href="css/style3.css" rel="stylesheet" type="text/css" />
+<meta charset="utf-8">
+        <title>Multiple checkbox calculation</title>
+        <style>
+            div {
+                color: red;
+                font-size: 15px;/*35px;*/
+            }
+        </style>
+        <script src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+
+
+                $("input[type=checkbox]").click(function() {
+                    var total = 0;
+                    $("input[type=checkbox]:checked").each(
+
+                    function() {
+				
+                        total += parseInt($(this).val());
+
+                    });
+                    
+                    $("#total").html("total:" + total);
+                });
+
+            });
+        </script>
+	
+<style>
+body { 
+  margin: 0 0; 
+  padding:3px 0; 
+  text-align:center; 
+} 
+ 
+#bg { 
+    position:fixed;  
+    top:-50%;  
+    left:-50%;  
+    width:100%;  
+    height:100%; 
+} 
+#bg img { 
+    position:absolute;  
+    top:0;  
+    left:0;  
+    right:0;  
+    bottom:0;  
+    margin:auto;  
+    min-width:50%; 
+    min-height:50%; 
+} 
+ 
+.checkbox { 
+  display:inline-block; 
+  position:relative; 
+  text-align:left; 
+  width:60px; /*60*/
+  height:30px; /*30*/
+  background-color:#FFFFFF ; /*#484850*/
+  overflow:hidden; 
+  box-shadow:inset 0 10px 25px rgba(0,0,0, .5), 0px 1px 2px #fff; 
+  -webkit-border-radius:20px; 
+  -moz-border-radius:20px; 
+  border-radius:20px; 
+  margin:10px;
+} 
+ 
+.checkbox input { 
+  display:block; 
+  position:absolute; 
+  top:0; 
+  right:0; 
+  bottom:0; 
+  left:0; 
+  width:100%; 
+  height:100%; 
+  margin:0 0; 
+  cursor:pointer; 
+  opacity:0; 
+  filter:alpha(opacity=0); 
+  z-index:2;
+} 
+ 
+.checkbox label { 
+  background-color: #FFFFFF; /*#151b29;*/
+  background-image:-webkit-linear-gradient(-40deg,rgba(0,0,0,0),rgba(255,255,255,0.1),rgba(0,0,0,0.2)); 
+  background-image:-moz-linear-gradient(-40deg,rgba(0,0,0,0),rgba(255,255,255,0.1),rgba(0,0,0,0.2)); 
+  background-image:-ms-linear-gradient(-40deg,rgba(0,0,0,0),rgba(255,255,255,0.1),rgba(0,0,0,0.2)); 
+  background-image:-o-linear-gradient(-40deg,rgba(0,0,0,0),rgba(255,255,255,0.1),rgba(0,0,0,0.2)); 
+  background-image:linear-gradient(-40deg,rgba(0,0,0,0),rgba(255,255,255,0.1),rgba(0,0,0,0.2)); 
+  -webkit-box-shadow:0 0 0 1px rgba(0,0,0,0.1),0 1px 2px rgba(0,0,0,0.7); 
+  -moz-box-shadow:0 0 0 1px rgba(0,0,0,0.1),0 1px 2px rgba(0,0,0,0.7); 
+  box-shadow:0 0 0 1px rgba(0,0,0,0.1),0 1px 2px rgba(0,0,0,0.7); 
+  -webkit-border-radius:20px; 
+  -moz-border-radius:20px; 
+  border-radius:20px; 
+  display:inline-block; 
+  width:30px; 
+  text-align:center; 
+  font:bold 10px/28px Arial,Sans-Serif; 
+  color:#999; 
+  text-shadow:0 -1px 0 rgba(0,0,0,0.7); 
+  -webkit-transition:margin-left 0.2s ease-in-out; 
+  -moz-transition:margin-left 0.2s ease-in-out; 
+  -ms-transition:margin-left 0.2s ease-in-out; 
+  -o-transition:margin-left 0.2s ease-in-out; 
+  transition:margin-left 0.2s ease-in-out; 
+  margin:1px; 
+} 
+ 
+.checkbox label:before { 
+  content:attr(data-off); 
+} 
+ 
+.checkbox input:checked + label { 
+  margin-left:29px; 
+  /* green when 'on'  
+  background-color: #429f21; 
+  */ 
+   
+  /* blue when 'on' */ 
+  background-color: #009900;/*#0088cc;*/ 
+   
+  color:white; 
+} 
+ 
+.checkbox input:checked + label:before { 
+  content:attr(data-on); 
+} 
+table, th, td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+td#t01 {
+
+    border: 1px solid white;
+}
+
+table {
+    border-spacing: 15px;
+}
+
+</style>
+<style type="text/css">
+<!--
+.style1 {color: #400080}
+-->
+</style>
+<style type="text/css">
+<!--
+.style1 {color: #400080}
+-->
+</style>
+
+<!--[if IE]>
+<link rel="stylesheet" media="all" type="text/css" href="css/pro_dropline_ie.css" />
+<![endif]-->
+
+<!--  jquery core -->
+<script src="js/jquery/jquery-1.4.1.min.js" type="text/javascript"></script>
+ 
+<!--  checkbox styling script -->
+<script src="js/jquery/ui.core.js" type="text/javascript"></script>
+<script src="js/jquery/ui.checkbox.js" type="text/javascript"></script>
+<script src="js/jquery/jquery.bind.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function(){
+	$('input').checkBox();
+	$('#toggle-all').click(function(){
+ 	$('#toggle-all').toggleClass('toggle-checked');
+	$('#mainform input[type=checkbox]').checkBox('toggle');
+	return false;
+	});
+});
+</script>  
+
+
+<![if !IE 7]>
+
+<!--  styled select box script version 1 -->
+<script src="js/jquery/jquery.selectbox-0.5.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$('.styledselect').selectbox({ inputClass: "selectbox_styled" });
+});
+</script>
+ 
+
+<![endif]>
+
+
+<!--  styled select box script version 2 --> 
+<script src="js/jquery/jquery.selectbox-0.5_style_2.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$('.styledselect_form_1').selectbox({ inputClass: "styledselect_form_1" });
+	$('.styledselect_form_2').selectbox({ inputClass: "styledselect_form_2" });
+});
+</script>
+
+<!--  styled select box script version 3 --> 
+<script src="js/jquery/jquery.selectbox-0.5_style_2.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$('.styledselect_pages').selectbox({ inputClass: "styledselect_pages" });
+});
+</script>
+
+<!--  styled file upload script --> 
+<script src="js/jquery/jquery.filestyle.js" type="text/javascript"></script>
+<script type="text/javascript" charset="utf-8">
+$(function() {
+	$("input.file_1").filestyle({ 
+	image: "images/forms/upload_file.gif",
+	imageheight : 29,
+	imagewidth : 78,
+	width : 300
+	});
+});
+</script>
+
+<!-- Custom jquery scripts -->
+<script src="js/jquery/custom_jquery.js" type="text/javascript"></script>
+ 
+<!-- Tooltips -->
+<script src="js/jquery/jquery.tooltip.js" type="text/javascript"></script>
+<script src="js/jquery/jquery.dimensions.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {
+	$('a.info-tooltip ').tooltip({
+		track: true,
+		delay: 0,
+		fixPNG: true, 
+		showURL: false,
+		showBody: " - ",
+		top: -35,
+		left: 5
+	});
+});
+</script> 
+
+<!--  date picker script -->
+<link rel="stylesheet" href="css/datePicker.css" type="text/css" />
+<script src="js/jquery/date.js" type="text/javascript"></script>
+<script src="js/jquery/jquery.datePicker.js" type="text/javascript"></script>
+<script type="text/javascript" charset="utf-8">
+        $(function()
+{
+
+// initialise the "Select date" link
+$('#date-pick')
+	.datePicker(
+		// associate the link with a date picker
+		{
+			createButton:false,
+			startDate:'01/01/2005',
+			endDate:'31/12/2020'
+		}
+	).bind(
+		// when the link is clicked display the date picker
+		'click',
+		function()
+		{
+			updateSelects($(this).dpGetSelected()[0]);
+			$(this).dpDisplay();
+			return false;
+		}
+	).bind(
+		// when a date is selected update the SELECTs
+		'dateSelected',
+		function(e, selectedDate, $td, state)
+		{
+			updateSelects(selectedDate);
+		}
+	).bind(
+		'dpClosed',
+		function(e, selected)
+		{
+			updateSelects(selected[0]);
+		}
+	);
+	
+var updateSelects = function (selectedDate)
+{
+	var selectedDate = new Date(selectedDate);
+	$('#d option[value=' + selectedDate.getDate() + ']').attr('selected', 'selected');
+	$('#m option[value=' + (selectedDate.getMonth()+1) + ']').attr('selected', 'selected');
+	$('#y option[value=' + (selectedDate.getFullYear()) + ']').attr('selected', 'selected');
+}
+// listen for when the selects are changed and update the picker
+$('#d, #m, #y')
+	.bind(
+		'change',
+		function()
+		{
+			var d = new Date(
+						$('#y').val(),
+						$('#m').val()-1,
+						$('#d').val()
+					);
+			$('#date-pick').dpSetSelected(d.asString());
+		}
+	);
+
+// default the position of the selects to today
+var today = new Date();
+updateSelects(today.getTime());
+
+// and update the datePicker to reflect it...
+$('#d').trigger('change');
+});
+</script>
+
+<!-- MUST BE THE LAST SCRIPT IN <HEAD></HEAD></HEAD> png fix -->
+<script src="js/jquery/jquery.pngFix.pack.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+$(document).pngFix( );
+});
+</script>
+</head>
+<body> 
+<!-- Start: page-top-outer -->
+<div id="page-top-outer">    
+
+<!-- Start: page-top -->
+<div id="page-top">
+
+	<!-- start logo -->
+	<div id="logo">
+	<a href=""><img src="images/logo-dbbl.jpg" width="156" height="40" alt="" /></a>
+	</div>
+	<!-- end logo -->
+	
+	<!--  start top-search -->
+	<div id="top-search">
+		<table border="0" cellpadding="0" cellspacing="0">
+		<tr>
+		<td><input type="text" value="Search" onblur="if (this.value=='') { this.value='Search'; }" onfocus="if (this.value=='Search') { this.value=''; }" class="top-search-inp" /></td>
+		<td>
+		 
+		<select  class="styledselect">
+			<option value="">All</option>
+			<option value="">Products</option>
+			<option value="">Categories</option>
+			<option value="">Clients</option>
+			<option value="">News</option>
+		</select> 
+		 
+		</td>
+		<td>
+		<input type="image" src="images/shared/top_search_btn.gif"  />
+		</td>
+		</tr>
+		</table>
+	</div>
+ 	<!--  end top-search -->
+ 	<div class="clear"></div>
+
+</div>
+<!-- End: page-top -->
+
+</div>
+<!-- End: page-top-outer -->
+	
+<div class="clear">&nbsp;</div>
+ 
+<!--  start nav-outer-repeat................................................................................................. START -->
+<div class="nav-outer-repeat"> 
+<!--  start nav-outer -->
+<div class="nav-outer"> 
+
+		<!-- start nav-right -->
+		<div id="nav-right">
+		
+			<div class="nav-divider">&nbsp;</div>
+			<div class="showhide-account"><img src="images/shared/nav/nav_myaccount.gif" width="93" height="14" alt="" /></div>
+			<div class="nav-divider">&nbsp;</div>
+			<a href="../index.html" id="logout"><img src="images/shared/nav/nav_logout.gif" width="64" height="14" alt="" /></a>
+			<div class="clear">&nbsp;</div>
+		
+			<!--  start account-content -->	
+			<div class="account-content">
+			<div class="account-drop-inner">
+				<a href="" id="acc-settings">Settings</a>
+				<div class="clear">&nbsp;</div>
+				<div class="acc-line">&nbsp;</div>
+				<a href="" id="acc-details">Personal details </a>
+				<div class="clear">&nbsp;</div>
+				<div class="acc-line">&nbsp;</div>
+				<a href="" id="acc-project">Project details</a>
+				<div class="clear">&nbsp;</div>
+				<div class="acc-line">&nbsp;</div>
+				<a href="" id="acc-inbox">Inbox</a>
+				<div class="clear">&nbsp;</div>
+				<div class="acc-line">&nbsp;</div>
+				<a href="" id="acc-stats">Statistics</a> 
+			</div>
+			</div>
+			<!--  end account-content -->
+		
+		</div>
+		<!-- end nav-right -->
+
+
+		<!--  start nav -->
+		<div class="nav">
+		
+		<div class="nav-divider">&nbsp;</div>
+		
+		<ul class="select"><li><a href=""><b>Seat Booking</b><!--[if IE 7]><!--></a><!--<![endif]-->
+		<!--[if lte IE 6]><table><tr><td><![endif]-->
+		<!--<div class="select_sub">
+			<ul class="sub">
+				<li><a href="#nogo">Clients Details 1</a></li>
+				<li><a href="#nogo">Clients Details 2</a></li>
+				<li><a href="#nogo">Clients Details 3</a></li>
+			 
+			</ul>
+		</div>-->
+		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+		</li>
+		</ul>
+		<!--<div class="table">
+		
+		<ul class="select"><li><a href="buyticket.html"><b>Booking</b><!--[if IE 7]><!--></a><!--<![endif]-->
+		<!--[if lte IE 6]><table><tr><td><![endif]-->
+		<!--	<div class="select_sub">
+		<ul class="sub">
+				<li><a href="#nogo">Dashboard Details 1</a></li>
+				<li><a href="#nogo">Dashboard Details 2</a></li>
+				<li><a href="#nogo">Dashboard Details 3</a></li>
+			</ul>
+		</div>-->
+		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+		<!--</li>
+		</ul>
+		
+		<div class="nav-divider">&nbsp;</div>
+		                    
+		<ul class="select"><li><a href="view_info.html"><b>View  Information</b><!--[if IE 7]><!--></a><!--<![endif]-->
+		<!--[if lte IE 6]><table><tr><td><![endif]-->
+		<!--<div class="select_sub show">
+			<ul class="sub">
+				<li><a href="#nogo">View all products</a></li>
+				<li class="sub_show"><a href="#nogo">Add product</a></li>
+				<li><a href="#nogo">Delete products</a></li>
+			</ul>
+		</div>-->
+		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+		<!--</li>
+		</ul>
+		
+		<div class="nav-divider">&nbsp;</div>
+		
+		<ul class="current"><li><a href="deac_acc.html"><b>Deactive account</b><!--[if IE 7]><!--></a><!--<![endif]-->
+		<!--[if lte IE 6]><table><tr><td><![endif]-->
+		<!--<div class="select_sub">
+			<ul class="sub">
+				<li><a href="#nogo">News details 1</a></li>
+				<li><a href="#nogo">News details 2</a></li>
+				<li><a href="#nogo">News details 3</a></li>
+			</ul>
+		</div>-->
+		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+		<!--</li>
+		</ul>
+		<!--
+		<div class="nav-divider">&nbsp;</div>
+		
+		<ul class="select"><li><a href="index.html"><b>Home</b><!--[if IE 7]><!--></a><!--<![endif]-->
+		<!--[if lte IE 6]><table><tr><td><![endif]-->
+		<!--<div class="select_sub">
+			<ul class="sub">
+				<li><a href="#nogo">Clients Details 1</a></li>
+				<li><a href="#nogo">Clients Details 2</a></li>
+				<li><a href="#nogo">Clients Details 3</a></li>
+			 
+			</ul>
+		</div>-->
+		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+		<!--</li>-->
+		<!--</ul>-->
+		
+		<!--<div class="nav-divider">&nbsp;</div>
+		
+		<ul class="select"><li><a href=""><b>Change Password</b><!--[if IE 7]><!--></a><!--<![endif]-->
+		<!--[if lte IE 6]><table><tr><td><![endif]-->
+		<!--<div class="select_sub">
+			<ul class="sub">
+				<li><a href="#nogo">News details 1</a></li>
+				<li><a href="#nogo">News details 2</a></li>
+				<li><a href="#nogo">News details 3</a></li>
+			</ul>
+		</div>-->
+		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+		<!--</li>
+		</ul>
+		
+		<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+		</div>
+		<!--  start nav -->
+
+</div>
+<div class="clear"></div>
+<!--  start nav-outer -->
+</div>
+<!--  start nav-outer-repeat................................................... END -->
+ 
+ <div class="clear"></div>
+ 
+<!-- start content-outer -->
+<div id="content-outer">
+<!-- start content -->
+<div id="content">
+
+
+<div id="page-heading"><h1></h1></div>
+
+
+<table border="0" width="100%" cellpadding="0" cellspacing="0" id="content-table">
+<tr>
+	<th rowspan="3" class="sized"><img src="images/shared/side_shadowleft.jpg" width="20" height="300" alt="" /></th>
+	<th class="topleft"></th>
+	<td id="tbl-border-top">&nbsp;</td>
+	<th class="topright"></th>
+	<th rowspan="3" class="sized"><img src="images/shared/side_shadowright.jpg" width="20" height="300" alt="" /></th>
+</tr>
+<tr>
+	<td id="tbl-border-left"></td>
+	<td>
+	<!--  start content-table-inner -->
+	<div id="content-table-inner">
+	
+	<table border="0" width="100%" cellpadding="0" cellspacing="0">
+	<tr valign="top">
+	<td>
+	
+		<!-- start id-form -->
+		<table border="0" cellpadding="0" cellspacing="0"  id="id-form">
+		
+ <div class="left1">
+<div class="leftw">
+<div align="center">Driver</div>
+</div>
+<div class="leftbg">
+<div> 
+<span class="checkbox"> 
+    <input type="checkbox" value="1" name="fieldMark[correct00]"  class="css-checkbox"> 
+    <label data-on="A1" data-off="A1"></label> 
+</span> 
+</div>
+<div> 
+<span class="checkbox"> 
+    <input type="checkbox" value="1" name="fieldMark[correct00]"  class="css-checkbox"> 
+    <label data-on="B1" data-off="B1"></label> 
+</span> 
+</div>
+<div> 
+<span class="checkbox"> 
+    <input type="checkbox" value="1" name="fieldMark[correct00]"  class="css-checkbox"> 
+    <label data-on="C1" data-off="C1"></label> 
+</span> 
+</div>
+<div> 
+<span class="checkbox"> 
+    <input type="checkbox" value="1" name="fieldMark[correct00]"  class="css-checkbox"> 
+    <label data-on="D1" data-off="D1"></label> 
+</span> 
+</div>
+<div> 
+<span class="checkbox"> 
+    <input type="checkbox" value="1" name="fieldMark[correct00]"  class="css-checkbox"> 
+    <label data-on="E1" data-off="E1"></label> 
+</span> 
+</div>
+<div> 
+<span class="checkbox"> 
+    <input type="checkbox" value="1" name="fieldMark[correct00]"  class="css-checkbox"> 
+    <label data-on="F1" data-off="F1"></label> 
+</span> 
+</div>
+<div> 
+<span class="checkbox"> 
+    <input type="checkbox" value="1" name="fieldMark[correct00]"  class="css-checkbox"> 
+    <label data-on="G1" data-off="G1"></label> 
+</span> 
+</div>
+</div>
+
+<div class="leftbg">
+<div> 
+<span class="checkbox"> 
+    <input type="checkbox" value="1" name="fieldMark[correct00]"  class="css-checkbox"> 
+    <label data-on="A2" data-off="A2"></label> 
+</span> 
+</div>
+<div> 
+<span class="checkbox"> 
+    <input type="checkbox" value="1" name="fieldMark[correct00]"  class="css-checkbox"> 
+    <label data-on="B2" data-off="B2"></label> 
+</span> 
+</div>
+<div> 
+<span class="checkbox"> 
+    <input type="checkbox" value="1" name="fieldMark[correct00]"  class="css-checkbox"> 
+    <label data-on="C2" data-off="C2"></label> 
+</span> 
+</div>
+<div> 
+<span class="checkbox"> 
+    <input type="checkbox" value="1" name="fieldMark[correct00]"  class="css-checkbox"> 
+    <label data-on="D2" data-off="D2"></label> 
+</span> 
+</div>
+<div> 
+<span class="checkbox"> 
+    <input type="checkbox" value="1" name="fieldMark[correct00]"  class="css-checkbox"> 
+    <label data-on="E2" data-off="E2"></label> 
+</span> 
+</div>
+<div> 
+<span class="checkbox"> 
+    <input type="checkbox" value="1" name="fieldMark[correct00]"  class="css-checkbox"> 
+    <label data-on="F2" data-off="F2"></label> 
+</span> 
+</div>
+<div> 
+<span class="checkbox"> 
+    <input type="checkbox" value="1" name="fieldMark[correct00]"  class="css-checkbox"> 
+    <label data-on="G2" data-off="G2"></label> 
+</span> 
+</div>
+
+</div>
+ <div class="leftbg3">
+<div> 
+<span class="checkbox"> 
+    <input type="checkbox" value="1" name="fieldMark[correct00]"  class="css-checkbox"> 
+    <label data-on="A4" data-off="A4"></label> 
+</span> 
+</div>
+<div> 
+<span class="checkbox"> 
+    <input type="checkbox" value="1" name="fieldMark[correct00]"  class="css-checkbox"> 
+    <label data-on="B4" data-off="B4"></label> 
+</span> 
+</div>
+<div> 
+<span class="checkbox"> 
+    <input type="checkbox" value="1" name="fieldMark[correct00]"  class="css-checkbox"> 
+    <label data-on="C4" data-off="C4"></label> 
+</span> 
+</div>
+<div> 
+<span class="checkbox"> 
+    <input type="checkbox" value="1" name="fieldMark[correct00]"  class="css-checkbox"> 
+    <label data-on="D4" data-off="D4"></label> 
+</span> 
+</div>
+<div> 
+<span class="checkbox"> 
+    <input type="checkbox" value="1" name="fieldMark[correct00]"  class="css-checkbox"> 
+    <label data-on="E4" data-off="E4"></label> 
+</span> 
+</div>
+<div> 
+<span class="checkbox"> 
+    <input type="checkbox" value="1" name="fieldMark[correct00]"  class="css-checkbox"> 
+    <label data-on="F4" data-off="F4"></label> 
+</span> 
+</div>
+<div> 
+<span class="checkbox"> 
+    <input type="checkbox" value="1" name="fieldMark[correct00]"  class="css-checkbox"> 
+    <label data-on="G4" data-off="G4"></label> 
+</span> 
+</div>
+</div>
+
+<div class="leftbg3">
+<div> 
+<span class="checkbox"> 
+    <input type="checkbox" value="1" name="fieldMark[correct00]"  class="css-checkbox"> 
+    <label data-on="A3" data-off="A3"></label> 
+</span> 
+</div>
+<div> 
+<span class="checkbox"> 
+    <input type="checkbox" value="1" name="fieldMark[correct00]"  class="css-checkbox"> 
+    <label data-on="B3" data-off="B3"></label> 
+</span> 
+</div>
+<div> 
+<span class="checkbox"> 
+    <input type="checkbox" value="1" name="fieldMark[correct00]"  class="css-checkbox"> 
+    <label data-on="C3" data-off="C3"></label> 
+</span> 
+</div>
+<div> 
+<span class="checkbox"> 
+    <input type="checkbox" value="1" name="fieldMark[correct00]"  class="css-checkbox"> 
+    <label data-on="D3" data-off="D3"></label> 
+</span> 
+</div>
+<div> 
+<span class="checkbox"> 
+    <input type="checkbox" value="1" name="fieldMark[correct00]"  class="css-checkbox"> 
+    <label data-on="E3" data-off="E3"></label> 
+</span> 
+</div>
+<div> 
+<span class="checkbox"> 
+    <input type="checkbox" value="1" name="fieldMark[correct00]"  class="css-checkbox"> 
+    <label data-on="F3" data-off="F3"></label> 
+</span> 
+</div>
+<div> 
+<span class="checkbox"> 
+    <input type="checkbox" value="1" name="fieldMark[correct00]"  class="css-checkbox"> 
+    <label data-on="G3" data-off="G3"></label> 
+</span> 
+</div>
+
+</div>
+ 
+</div>
+
+<div class="right1">
+  <div align="center">Seat Information:
+  <form id="form1" name="form1" method="post" action="">
+
+    <table width="368" border="1" style="border-color:#800000;">
+      <tr style="background-color: #800000;">
+        <td width="40" height="30"><div align="center">Seat No </div></td>
+        <td width="60"><div align="center">Fare(Taka)</div></td>
+        <td width="80"><div align="center">Remove</div></td>
+      </tr>
+      <tr  style="background-color: #800000;">
+        <td height="30"><label>
+          <input type="text"  name="seat no"/>
+        </label></td>
+        <td><label>
+          <input type="text" name="fare" />
+        </label></td>
+        <td><label>
+          <input type="submit" name="Submit" value="Remove" />
+        </label></td>
+      </tr>
+	  </table>
+        <div id="total"></div>
+    </form>
+  </div>
+</div>
+<!--</div>-->
+		<!--<tr>
+			<th valign="top">Name:</th>
+			<td><input type="text" class="inp-form" /></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th valign="top">Email:</th>
+			<td><input type="text" class="inp-form" /></td>
+			<!--<td>
+			<div class="error-left"></div>
+			<div class="error-inner">This field is required.</div>
+			</td>-->
+		<!--</tr>
+		<tr>
+		<th valign="top">Password:</th>
+		<td><input type="text" class="inp-form" /></td>
+		<!--<td>	
+		<select  class="styledselect_form_1">
+			<option value="">All</option>
+			<option value="">Products</option>
+			<option value="">Categories</option>
+			<option value="">Clients</option>
+			<option value="">News</option>
+		</select>
+		</td>-->
+		<!--<td></td>
+		</tr>
+		<!--<tr>
+		<th valign="top">Address:</th>
+		<td><input type="text" class="inp-form" /></td>
+		<!--<td>	
+		<select  class="styledselect_form_1">
+			<option value="">All</option>
+			<option value="">Products</option>
+			<option value="">Categories</option>
+			<option value="">Clients</option>
+			<option value="">News</option>
+		</select>
+		</td>
+		<td></td>
+		</tr> 
+		<tr>
+			<th valign="top">Specialist:</th>
+			
+			<td><input type="text" class="inp-form" /></td>
+			<td></td>
+		</tr>
+		<tr>
+		<th valign="top">Gender:</th>
+		<td class="noheight">
+		
+			<table border="0" cellpadding="0" cellspacing="0">
+			<tr  valign="top">
+		<select  id="y"  class="styledselect-Gender">
+						<option value="Male">Male</option>
+						<option value="Female">Female</option>
+						
+					</select>
+					</td>
+					<td></td>
+	
+	</tr>
+		</table>
+	</tr>
+		<tr>
+			<th valign="top">Account no:</th>
+			<td><input type="text" class="inp-form" /></td>
+			<td></td>
+		</tr>-->
+		
+		<!--<tr>
+		<th>&nbsp;</th>
+		<td valign="top">
+			<input type="submit"  value="Submit"  name="Submit" class="form-submit" />
+			<!--<input type="reset" value="" class="form-reset"  />-->
+		<!--</td>
+		<td></td>
+	</tr>
+	</table>
+	<!-- end id-form  -->
+
+	<!--</td>
+	<td>
+
+	<!-- end related-activities -->
+
+<!--</td>-->
+<!--</tr>-->
+<tr>
+<td><img src="images/shared/blank.gif" width="695" height="1" alt="blank" /></td>
+<td></td>
+</tr>
+</table>
+ 
+<div class="clear"></div>
+ 
+
+</div>
+<!--  end content-table-inner  -->
+</td>
+<td id="tbl-border-right"></td>
+</tr>
+<tr>
+	<th class="sized bottomleft"></th>
+	<td id="tbl-border-bottom">&nbsp;</td>
+	<th class="sized bottomright"></th>
+</tr>
+</table>
+
+
+
+<div class="clear">&nbsp;</div>
+
+</div>
+<!--  end content -->
+<div class="clear">&nbsp;</div>
+</div>
+<!--  end content-outer -->
+
+ 
+
+<div class="clear">&nbsp;</div>
+    
+<!-- start footer -->         
+<div id="footer">
+	<!--  start footer-left -->
+	<div id="footer-left">
+	Admin Skin &copy; Copyright MediApps Ltd. <a href=""></a> All rights reserved.</div>
+	<!--  end footer-left -->
+	<div class="clear">&nbsp;</div>
+</div>
+<!-- end footer -->
+ 
+</body>
+</html>

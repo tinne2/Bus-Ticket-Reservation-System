@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<link href="css/style5.css" rel="stylesheet" type="text/css" />
+ <meta charset="utf-8">
+        <title>Multiple checkbox calculation</title>
+        <style>
+            div {
+                color: red;
+                font-size: 15px;/*35px;*/
+            }
+        </style>
+        <script src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+
+
+                $("input[type=checkbox]").click(function() {
+                    var total = 0;
+                    $("input[type=checkbox]:checked").each(
+
+                    function() {
+				
+                        total += parseInt($(this).val());
+
+                    });
+                    
+                    $("#total").html("total:" + total);
+                });
+
+            });
+        </script>
+		<title>Untitled</title>
+    <script type="text/javascript">
+    <!--
+    function toggle(box,theId) {
+        if(document.getElementById) {
+            var cell = document.getElementById(theId);
+            if(box.checked) {
+                cell.className = "on";
+            }
+            else {
+                cell.className = "off";
+            }
+        }
+    }
+    // -->
+    </script>
+    <style type="text/css">
+    <!--
+    .off {
+    background-color: #fff;
+	width:40px;
+	height:40px;
+	margin-top:10px;
+			border-radius:5px;
+    }
+    .on {
+    background-color: #009933;
+	width:40px;
+	height:40px;
+		margin-top:10px;
+			border-radius:5px;
+
+    }
+    -->
+    </style>        
+
+<style>
+table, th, td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+td#t01 {
+
+    border: 1px solid white;
+}
+
+table {
+    border-spacing: 15px;
+}
+
+</style>
+<style type="text/css">
+<!--
+.style1 {color: #400080}
+-->
+</style>
+</head>
+
+<body>
+<!--<div class="var"></div>-->
+
+<div class="header">
+<div class="left"><img src="images/logo-dbbl.jpg" width="188" height="82"  /></div>
+<!--<div class="right">Logout</div>-->
+</div>
+<div class="menu2">
+<div class="logout"><a href=""><strong>Logout</strong></a></div>
+</div>
+<!--<div class="var-menu">
+<ul class="menu">
+</div>-->
+<div align="center">
+  <!--<li><a href="dashboard.html">Dashboard</a></li>-->
+  <!--<li><a href="busadd.html">Bus Add</a></li>-->
+  <!--<li><a href="busview.html">Bus View</a></li>-->
+  <!--<li><a href="busmodify.html">Bus Modify</a></li>-->
+  <!--<li><a href="busdelete.html">Bus Delete</a></li>-->
+  <!--<li><a href="admin.html">Logout</a></li>-->
+</div>
+<div class="var4-bg">
+
+<div class="content">
+
+<div class="left1">
+<div class="leftw">
+<div align="center">Driver</div>
+</div>
+<div class="leftbg">
+       <table border="1" cellpadding="5" cellspacing="0">
+    <div class="off" id="cell1" >
+    <input type="checkbox" onClick="toggle(this,'cell1')" value="1"  name="fieldMark[correct10]" class="css-checkbox">A1
+    </div>
+    <div class="off" id="cell2">
+    <input type="checkbox" onClick="toggle(this,'cell2')" value="1"  name="fieldMark[correct10]" class="css-checkbox">B1
+    </div>
+	<div class="off" id="cell3">
+    <input type="checkbox" onClick="toggle(this,'cell3')" value="1"  name="fieldMark[correct10]" class="css-checkbox">C1
+    </div>
+    <div class="off" id="cell4">
+    <input type="checkbox" onClick="toggle(this,'cell4')" value="1"  name="fieldMark[correct10]" class="css-checkbox">D1
+    </div>
+	<div class="off" id="cell5">
+    <input type="checkbox" onClick="toggle(this,'cell5')" value="1"  name="fieldMark[correct10]" class="css-checkbox">E1
+    </div>
+    <div class="off" id="cell6">
+    <input type="checkbox" onClick="toggle(this,'cell6')" value="1"  name="fieldMark[correct10]" class="css-checkbox">F1
+    </div>
+	 <div class="off" id="cell7">
+    <input type="checkbox" onClick="toggle(this,'cell7')" value="1"  name="fieldMark[correct10]" class="css-checkbox">G1
+    </div>
+    </table>  
+</div>
+
+<div class="leftbg">
+<table border="1" cellpadding="5" cellspacing="0">
+    <div class="off" id="cell8">
+    <input type="checkbox" onClick="toggle(this,'cell8')" value="1"  name="fieldMark[correct10]" class="css-checkbox">A2
+    </div>
+    <div class="off" id="cell9">
+    <input type="checkbox" onClick="toggle(this,'cell9')" value="1"  name="fieldMark[correct10]" class="css-checkbox">B2
+    </div>
+	<div class="off" id="cell10">
+    <input type="checkbox" onClick="toggle(this,'cell10')" value="1"  name="fieldMark[correct10]" class="css-checkbox">C2
+    </div>
+    <div class="off" id="cell11">
+    <input type="checkbox" onClick="toggle(this,'cell11')" value="1"  name="fieldMark[correct10]" class="css-checkbox">D2
+    </div>
+	<div class="off" id="cell12">
+    <input type="checkbox" onClick="toggle(this,'cell12')" value="1"  name="fieldMark[correct10]" class="css-checkbox">E2
+    </div>
+    <div class="off" id="cell13">
+    <input type="checkbox" onClick="toggle(this,'cell13')" value="1"  name="fieldMark[correct10]" class="css-checkbox">F2
+    </div>
+	 <div class="off" id="cell14">
+    <input type="checkbox" onClick="toggle(this,'cell14')" value="1"  name="fieldMark[correct10]" class="css-checkbox">G2
+    </div>
+    </table>  
+
+</div>
+ <div class="leftbg3">
+<table border="1" cellpadding="5" cellspacing="0">
+    <div class="off" id="cell15" >
+    <input type="checkbox" onClick="toggle(this,'cell15')" value="1"  name="fieldMark[correct10]" class="css-checkbox">A4
+    </div>
+    <div class="off" id="cell16">
+    <input type="checkbox" onClick="toggle(this,'cell16')" value="1"  name="fieldMark[correct10]" class="css-checkbox">B4
+    </div>
+	<div class="off" id="cell17">
+    <input type="checkbox" onClick="toggle(this,'cell17')" value="1"  name="fieldMark[correct10]" class="css-checkbox">C4
+    </div>
+    <div class="off" id="cell18">
+    <input type="checkbox" onClick="toggle(this,'cell18')" value="1"  name="fieldMark[correct10]" class="css-checkbox">D4
+    </div>
+	<div class="off" id="cell19">
+    <input type="checkbox" onClick="toggle(this,'cell19')" value="1"  name="fieldMark[correct10]" class="css-checkbox">E4
+    </div>
+    <div class="off" id="cell20">
+    <input type="checkbox" onClick="toggle(this,'cell20')" value="1"  name="fieldMark[correct10]" class="css-checkbox">F4
+    </div>
+	 <div class="off" id="cell21">
+    <input type="checkbox" onClick="toggle(this,'cell21')" value="1"  name="fieldMark[correct10]" class="css-checkbox">G4
+    </div>
+    </table>  
+</div>
+
+<div class="leftbg3">
+<table border="1" cellpadding="5" cellspacing="0">
+    <div class="off" id="cell22" >
+    <input type="checkbox" onClick="toggle(this,'cell22')" value="1"  name="fieldMark[correct10]" class="css-checkbox">A3
+    </div>
+    <div class="off" id="cell23">
+    <input type="checkbox" onClick="toggle(this,'cell23')" value="1"  name="fieldMark[correct10]" class="css-checkbox">B3
+    </div>
+	<div class="off" id="cell24">
+    <input type="checkbox" onClick="toggle(this,'cell24')" value="1"  name="fieldMark[correct10]" class="css-checkbox">C3
+    </div>
+    <div class="off" id="cell25">
+    <input type="checkbox" onClick="toggle(this,'cell25')" value="1"  name="fieldMark[correct10]" class="css-checkbox">D3
+    </div>
+	<div class="off" id="cell26">
+    <input type="checkbox" onClick="toggle(this,'cell26')" value="1"  name="fieldMark[correct10]" class="css-checkbox">E3
+    </div>
+    <div class="off" id="cell27">
+    <input type="checkbox" onClick="toggle(this,'cell27')" value="1"  name="fieldMark[correct10]" class="css-checkbox">F3
+    </div>
+	 <div class="off" id="cell28">
+    <input type="checkbox" onClick="toggle(this,'cell28')" value="1"  name="fieldMark[correct10]" class="css-checkbox">G3
+    </div>
+    </table>  
+ </div>
+</div>
+
+<div class="right1">
+  <div align="center">Seat Information:
+  <form id="form1" name="form1" method="post" action="">
+
+    <table width="368" border="1" style="border-color:#800000;">
+      <tr style="background-color: #800000;">
+        <td width="40" height="30"><div align="center">Seat No </div></td>
+        <td width="60"><div align="center">Fare(Taka)</div></td>
+        <td width="80"><div align="center">Remove</div></td>
+      </tr>
+      <tr  style="background-color: #800000;">
+        <td height="30"><label>
+          <input type="text"  name="seat no"/>
+        </label></td>
+        <td><label>
+          <input type="text" name="fare" />
+        </label></td>
+        <td><label>
+          <input type="submit" name="Submit" value="Remove" />
+        </label></td>
+      </tr>
+      <!--<tr  style="background-color: #800000;">
+        <td height="30">&nbsp;</td>
+        <td></td>
+        <td>&nbsp;</td>
+              
+      </tr>-->
+    </table>
+        <div id="total"></div>
+
+    </form>
+  </div>
+</div>
+	  
+	  <div class="footer">
+
+	<h1>&nbsp;</h1>
+	<h1>&nbsp;</h1>
+	<h1>User Skin &copy; All rights reserved.</h1>
+	<h1> Privacy Policy | Terms & Conditions</h1>
+
+</div>
+</body>
+</html>

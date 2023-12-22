@@ -1,0 +1,362 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<link href="css/style4.css" rel="stylesheet" type="text/css" />
+ <meta charset="utf-8">
+        <title>Multiple checkbox calculation</title>
+        <style>
+            div {
+                color: red;
+                font-size: 18px;/*35px;*/
+            }
+        </style>
+        <script src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+
+
+                $("input[type=checkbox]").click(function() {
+
+                    var total = 0;
+                    $("input[type=checkbox]:checked").each(
+
+                    function() {
+
+                        total += parseInt($(this).val());
+
+                    });
+
+                    $("#total").html("total:" + total);
+                });
+
+            });
+        </script>
+<style>
+table, th, td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+td#t01 {
+
+    border: 1px solid white;
+}
+
+table {
+    border-spacing: 15px;
+}
+
+</style>
+<style type="text/css">
+<!--
+.style1 {color: #400080}
+-->
+</style>
+</head>
+
+<body>
+<!--<div class="var"></div>-->
+
+<div class="header">
+<div class="left"><img src="images/logo-dbbl.jpg" width="188" height="82"  /></div>
+<!--<div class="right">Logout</div>-->
+</div>
+<div class="menu2">
+<div class="logout"><a href="../index.html"><strong>Logout</strong></a></div>
+</div>
+<!--<div class="var-menu">
+<ul class="menu">
+</div>-->
+<div align="center">
+  <!--<li><a href="dashboard.html">Dashboard</a></li>-->
+  <!--<li><a href="busadd.html">Bus Add</a></li>-->
+  <!--<li><a href="busview.html">Bus View</a></li>-->
+  <!--<li><a href="busmodify.html">Bus Modify</a></li>-->
+  <!--<li><a href="busdelete.html">Bus Delete</a></li>-->
+  <!--<li><a href="admin.html">Logout</a></li>-->
+</div>
+<div class="var4-bg">
+
+<div class="content">
+
+<div class="left1">
+<div class="leftw">
+<div align="center">Driver</div>
+</div>
+<div class="leftbg">
+<section>
+  <!-- Checbox Four -->
+  <!--<h3>Checkbox Four</h3>-->
+  	<div class="checkboxFour">
+  		<input type="checkbox" value="1" id="checkboxFourInput" name="fieldMark[correct00]"  class="css-checkbox" />
+	  	<label for="checkboxFourInput" ><div align="center"><a href=""><span class="style1">A1</span></a></div></label>
+  	</div>
+</section>
+<section>
+  <!-- Checbox Four -->
+  <!--<h3>Checkbox Four</h3>-->
+  	<div class="checkboxFour">
+  		<input type="checkbox" value="1" id="checkboxFourInput" name="fieldMark[correct00]"  class="css-checkbox" />
+	  	<label for="checkboxFourInput"><div align="center"><a href=""><span class="style1">B1</span></a></div></label>
+  	</div>
+</section>
+<section>
+  <!-- Checbox Four -->
+  <!--<h3>Checkbox Four</h3>-->
+  	<div class="checkboxFour">
+  		<input type="checkbox" value="1" id="checkboxFourInput" name="fieldMark[correct00]"  class="css-checkbox" />
+	  	<label for="checkboxFourInput"><div align="center"><a href=""><span class="style1">C1</span></a></div></label>
+  	</div>
+</section>
+<section>
+  <!-- Checbox Four -->
+  <!--<h3>Checkbox Four</h3>-->
+  	<div class="checkboxFour">
+  		<input type="checkbox" value="1" id="checkboxFourInput" name="fieldMark[correct00]"  class="css-checkbox" />
+	  	<label for="checkboxFourInput"><div align="center"><a href=""><span class="style1">D1</span></a></div></label>
+  	</div>
+</section>
+<section>
+  <!-- Checbox Four -->
+  <!--<h3>Checkbox Four</h3>-->
+  	<div class="checkboxFour">
+  		<input type="checkbox" value="1" id="checkboxFourInput" name="fieldMark[correct00]"  class="css-checkbox" />
+	  	<label for="checkboxFourInput"><div align="center"><a href=""><span class="style1">E1</span></a></div></label>
+  	</div>
+</section>
+<section>
+  <!-- Checbox Four -->
+  <!--<h3>Checkbox Four</h3>-->
+  	<div class="checkboxFour">
+  		<input type="checkbox" value="1" id="checkboxFourInput" name="fieldMark[correct00]"  class="css-checkbox" />
+	  	<label for="checkboxFourInput"><div align="center"><a href=""><span class="style1">F1</span></a></div></label>
+  	</div>
+</section>
+<section>
+  <!-- Checbox Four -->
+  <!--<h3>Checkbox Four</h3>-->
+  	<div class="checkboxFour">
+  		<input type="checkbox" value="1" id="checkboxFourInput" name="fieldMark[correct00]"  class="css-checkbox" />
+	  	<label for="checkboxFourInput"><div align="center"><a href=""><span class="style1">G1</span></a></div></label>
+  	</div>
+</section>
+</div>
+
+<div class="leftbg">
+<section>
+  <!-- Checbox Four -->
+  <!--<h3>Checkbox Four</h3>-->
+  	<div class="checkboxFour">
+  		<input type="checkbox" value="1" id="checkboxFourInput" name="" />
+	  	<label for="checkboxFourInput"><div align="center"><a href=""><span class="style1">A2</span></a></div></label>
+  	</div>
+</section>
+<section>
+  <!-- Checbox Four -->
+  <!--<h3>Checkbox Four</h3>-->
+  	<div class="checkboxFour">
+  		<input type="checkbox" value="1" id="checkboxFourInput" name="" />
+	  	<label for="checkboxFourInput"><div align="center"><a href=""><span class="style1">B2</span></a></div></label>
+  	</div>
+</section>
+<section>
+  <!-- Checbox Four -->
+  <!--<h3>Checkbox Four</h3>-->
+  	<div class="checkboxFour">
+  		<input type="checkbox" value="1" id="checkboxFourInput" name="" />
+	  	<label for="checkboxFourInput"><div align="center"><a href=""><span class="style1">C2</span></a></div></label>
+  	</div>
+</section>
+<section>
+  <!-- Checbox Four -->
+  <!--<h3>Checkbox Four</h3>-->
+  	<div class="checkboxFour">
+  		<input type="checkbox" value="1" id="checkboxFourInput" name="" />
+	  	<label for="checkboxFourInput"><div align="center"><a href=""><span class="style1">D2</span></a></div></label>
+  	</div>
+</section>
+<section>
+  <!-- Checbox Four -->
+  <!--<h3>Checkbox Four</h3>-->
+  	<div class="checkboxFour">
+  		<input type="checkbox" value="1" id="checkboxFourInput" name="" />
+	  	<label for="checkboxFourInput"><div align="center"><a href=""><span class="style1">E2</span></a></div></label>
+  	</div>
+</section>
+<section>
+  <!-- Checbox Four -->
+  <!--<h3>Checkbox Four</h3>-->
+  	<div class="checkboxFour">
+  		<input type="checkbox" value="1" id="checkboxFourInput" name="" />
+	  	<label for="checkboxFourInput"><div align="center"><a href=""><span class="style1">F2</span></a></div></label>
+  	</div>
+</section>
+<section>
+  <!-- Checbox Four -->
+  <!--<h3>Checkbox Four</h3>-->
+  	<div class="checkboxFour">
+  		<input type="checkbox" value="1" id="checkboxFourInput" name="" />
+	  	<label for="checkboxFourInput"><div align="center"><a href=""><span class="style1">G2</span></a></div></label>
+  	</div>
+</section>
+
+</div>
+ <div class="leftbg3">
+<section>
+  <!-- Checbox Four -->
+  <!--<h3>Checkbox Four</h3>-->
+  	<div class="checkboxFour">
+  		<input type="checkbox" value="1" id="checkboxFourInput" name="" />
+	  	<label for="checkboxFourInput"><div align="center"><a href=""><span class="style1">A4</span></a></div></label>
+  	</div>
+</section>
+<section>
+  <!-- Checbox Four -->
+  <!--<h3>Checkbox Four</h3>-->
+  	<div class="checkboxFour">
+  		<input type="checkbox" value="1" id="checkboxFourInput" name="" />
+	  	<label for="checkboxFourInput"><div align="center"><a href=""><span class="style1">B4</span></a></div></label>
+  	</div>
+</section>
+<section>
+  <!-- Checbox Four -->
+  <!--<h3>Checkbox Four</h3>-->
+  	<div class="checkboxFour">
+  		<input type="checkbox" value="1" id="checkboxFourInput" name="" />
+	  	<label for="checkboxFourInput"><div align="center"><a href=""><span class="style1">C4</span></a></div></label>
+  	</div>
+</section>
+<section>
+  <!-- Checbox Four -->
+  <!--<h3>Checkbox Four</h3>-->
+  	<div class="checkboxFour">
+  		<input type="checkbox" value="1" id="checkboxFourInput" name="" />
+	  	<label for="checkboxFourInput"><div align="center"><a href=""><span class="style1">D4</span></a></div></label>
+  	</div>
+</section>
+<section>
+  <!-- Checbox Four -->
+  <!--<h3>Checkbox Four</h3>-->
+  	<div class="checkboxFour">
+  		<input type="checkbox" value="1" id="checkboxFourInput" name="" />
+	  	<label for="checkboxFourInput"><div align="center"><a href=""><span class="style1">E4</span></a></div></label>
+  	</div>
+</section>
+<section>
+  <!-- Checbox Four -->
+  <!--<h3>Checkbox Four</h3>-->
+  	<div class="checkboxFour">
+  		<input type="checkbox" value="1" id="checkboxFourInput" name="" />
+	  	<label for="checkboxFourInput"><div align="center"><a href=""><span class="style1">F4</span></a></div></label>
+  	</div>
+</section>
+<section>
+  <!-- Checbox Four -->
+  <!--<h3>Checkbox Four</h3>-->
+  	<div class="checkboxFour">
+  		<input type="checkbox" value="1" id="checkboxFourInput" name="" />
+	  	<label for="checkboxFourInput"><div align="center"><a href=""><span class="style1">G4</span></a></div></label>
+  	</div>
+</section>
+</div>
+
+<div class="leftbg3">
+<section>
+  <!-- Checbox Four -->
+  <!--<h3>Checkbox Four</h3>-->
+  	<div class="checkboxFour">
+  		<input type="checkbox" value="1" id="checkboxFourInput" name="" />
+	  	<label for="checkboxFourInput"><div align="center"><a href=""><span class="style1">A3</span></a></div></label>
+  	</div>
+</section>
+<section>
+  <!-- Checbox Four -->
+  <!--<h3>Checkbox Four</h3>-->
+  	<div class="checkboxFour">
+  		<input type="checkbox" value="1" id="checkboxFourInput" name="" />
+	  	<label for="checkboxFourInput"><div align="center"><a href=""><span class="style1">B3</span></a></div></label>
+  	</div>
+</section>
+<section>
+  <!-- Checbox Four -->
+  <!--<h3>Checkbox Four</h3>-->
+  	<div class="checkboxFour">
+  		<input type="checkbox" value="1" id="checkboxFourInput" name="" />
+	  	<label for="checkboxFourInput"><div align="center"><a href=""><span class="style1">C3</span></a></div></label>
+  	</div>
+</section>
+<section>
+  <!-- Checbox Four -->
+  <!--<h3>Checkbox Four</h3>-->
+  	<div class="checkboxFour">
+  		<input type="checkbox" value="1" id="checkboxFourInput" name="" />
+	  	<label for="checkboxFourInput"><div align="center"><a href=""><span class="style1">D3</span></a></div></label>
+  	</div>
+</section>
+<section>
+  <!-- Checbox Four -->
+  <!--<h3>Checkbox Four</h3>-->
+  	<div class="checkboxFour">
+  		<input type="checkbox" value="1" id="checkboxFourInput" name="" />
+	  	<label for="checkboxFourInput"><div align="center"><a href=""><span class="style1">E3</span></a></div></label>
+  	</div>
+</section>
+<section>
+  <!-- Checbox Four -->
+  <!--<h3>Checkbox Four</h3>-->
+  	<div class="checkboxFour">
+  		<input type="checkbox" value="1" id="checkboxFourInput" name="" />
+	  	<label for="checkboxFourInput"><div align="center"><a href=""><span class="style1">F3</span></a></div></label>
+  	</div>
+</section>
+<section>
+  <!-- Checbox Four -->
+  <!--<h3>Checkbox Four</h3>-->
+  	<div class="checkboxFour">
+  		<input type="checkbox" value="1" id="checkboxFourInput" name="" />
+	  	<label for="checkboxFourInput"><div align="center"><a href=""><span class="style1">G3</span></a></div></label>
+  	</div>
+</section>
+
+</div>
+ 
+</div>
+
+<div class="right1">
+  <div align="center">Seat Information:
+  <form id="form1" name="form1" method="post" action="">
+    <table width="368" border="1" style="border-color:#800000; background-color: #FF8080;">
+      <tr style="background-color: #800000;">
+        <td width="40" height="30"><div align="center">Seat No </div></td>
+        <td width="60"><div align="center">Fare(Taka)</div></td>
+        <td width="80"><div align="center">Remove</div></td>
+      </tr>
+      <tr>
+        <td height="30" style="border-color:#800000;"><label>
+          <input type="text" name="textfield" />
+        </label></td>
+        <td style="border-color:#800000;"><label>
+          <input type="text" name="textfield2" />
+        </label></td>
+        <td style="border-color:#800000;"><label>
+          <input type="submit" name="Submit" value="Remove" />
+        </label></td>
+      </tr>
+    </table>
+			        <div id="total"></div>
+
+    </form>
+  </div>
+</div>
+	  
+	  <div class="footer">
+<h1>&nbsp;</h1>
+	<h1>&nbsp;</h1>
+	<h1>User Skin &copy; All rights reserved.</h1>
+<h1> Privacy Policy | Terms & Conditions</h1>
+
+</div>
+</body>
+</html>
